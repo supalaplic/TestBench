@@ -1,0 +1,5 @@
+﻿  main.cpp
+e:\programming\opengl\testbench\testbench\time.h(16): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+e:\programming\opengl\testbench\testbench\main.cpp(128): warning C4018: '<': signed/unsigned mismatch
+e:\programming\opengl\testbench\testbench\main.cpp(133): warning C4018: '<': signed/unsigned mismatch
+  TestBench.vcxproj -> E:\programming\opengl\TestBench\Debug\TestBench.exe

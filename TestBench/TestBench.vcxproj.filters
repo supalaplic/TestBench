@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{b3c39cd2-fef2-423e-9baa-ba508029344a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helper">
+      <UniqueIdentifier>{9d0377e1-c7bb-4f58-8986-15b2761351d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{084b67e7-9d35-4350-91e7-effda696bb56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{001d35f3-938d-4175-8694-3a74c37e0ec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
+      <UniqueIdentifier>{9483bac8-d622-451a-bb57-66b23632b49c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Material">
+      <UniqueIdentifier>{f825a7a3-59b0-4c3a-8398-badff96943c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Objects">
+      <UniqueIdentifier>{11d7cf41-18ef-475d-8e5f-15bb8705edb0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="display.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="time.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_controller.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Core\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Core\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="resources.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="res_data.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="material.cpp">
+      <Filter>Core\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="cube.cpp">
+      <Filter>Scripts\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="lamp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="display.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_controller.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Core\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Core\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="material.h">
+      <Filter>Core\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="resources.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="res_data.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>Scripts\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="lamp.h" />
+  </ItemGroup>
+</Project>

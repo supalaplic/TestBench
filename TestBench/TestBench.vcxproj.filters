@@ -24,121 +24,121 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="display.cpp">
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\engine\core\object\mesh.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\object\object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\object\rendered_object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\display.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
+    <ClCompile Include="src\engine\core\game_loop.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\resources.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\material\material.cpp">
+      <Filter>Core\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\material\shader.cpp">
+      <Filter>Core\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\material\texture.cpp">
+      <Filter>Core\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\helper\camera.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
-    <ClCompile Include="input.cpp">
+    <ClCompile Include="src\engine\helper\time.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
-    <ClCompile Include="time.cpp">
+    <ClCompile Include="src\engine\helper\input.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
-    <ClCompile Include="debug.cpp">
+    <ClCompile Include="src\engine\helper\res_data.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
-    <ClCompile Include="stb_image.cpp">
+    <ClCompile Include="src\engine\helper\debug.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\tools\stb_image.cpp">
       <Filter>Tools</Filter>
     </ClCompile>
-    <ClCompile Include="editor_controller.cpp">
+    <ClCompile Include="src\test_scene\objects\cube.cpp">
+      <Filter>Scripts\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_scene\objects\lamp.cpp">
+      <Filter>Scripts\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_scene\editor_controller.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mesh.cpp">
-      <Filter>Core\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="shader.cpp">
-      <Filter>Core\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Core\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="resources.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="res_data.cpp">
-      <Filter>Helper</Filter>
-    </ClCompile>
-    <ClCompile Include="material.cpp">
-      <Filter>Core\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="cube.cpp">
-      <Filter>Scripts\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="lamp.cpp">
-      <Filter>Scripts\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="rendered_object.cpp">
-      <Filter>Core\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="game_loop.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="object.cpp">
-      <Filter>Core\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="test_scene.cpp" />
+    <ClCompile Include="src\test_scene\test_scene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="display.h">
+    <ClInclude Include="src\engine\core\object\mesh.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\object\object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\object\rendered_object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\object\transform.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\display.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
+    <ClInclude Include="src\engine\core\game_loop.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\resources.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\material\material.h">
+      <Filter>Core\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\material\shader.h">
+      <Filter>Core\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\material\texture.h">
+      <Filter>Core\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\helper\camera.h">
       <Filter>Helper</Filter>
     </ClInclude>
-    <ClInclude Include="input.h">
+    <ClInclude Include="src\engine\helper\time.h">
       <Filter>Helper</Filter>
     </ClInclude>
-    <ClInclude Include="time.h">
+    <ClInclude Include="src\engine\helper\input.h">
       <Filter>Helper</Filter>
     </ClInclude>
-    <ClInclude Include="debug.h">
+    <ClInclude Include="src\engine\helper\res_data.h">
       <Filter>Helper</Filter>
     </ClInclude>
-    <ClInclude Include="stb_image.h">
+    <ClInclude Include="src\engine\helper\debug.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\tools\stb_image.h">
       <Filter>Tools</Filter>
     </ClInclude>
-    <ClInclude Include="editor_controller.h">
+    <ClInclude Include="src\test_scene\objects\cube.h">
+      <Filter>Scripts\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_scene\objects\lamp.h">
+      <Filter>Scripts\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test_scene\editor_controller.h">
       <Filter>Scripts</Filter>
     </ClInclude>
-    <ClInclude Include="object.h">
-      <Filter>Core\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="mesh.h">
-      <Filter>Core\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="transform.h">
-      <Filter>Core\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="shader.h">
-      <Filter>Core\Material</Filter>
-    </ClInclude>
-    <ClInclude Include="texture.h">
-      <Filter>Core\Material</Filter>
-    </ClInclude>
-    <ClInclude Include="material.h">
-      <Filter>Core\Material</Filter>
-    </ClInclude>
-    <ClInclude Include="resources.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="res_data.h">
-      <Filter>Helper</Filter>
-    </ClInclude>
-    <ClInclude Include="cube.h">
-      <Filter>Scripts\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="lamp.h">
-      <Filter>Scripts\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="rendered_object.h">
-      <Filter>Core\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="game_loop.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="test_scene.h" />
+    <ClInclude Include="src\test_scene\test_scene.h" />
   </ItemGroup>
 </Project>

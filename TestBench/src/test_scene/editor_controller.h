@@ -1,5 +1,5 @@
 #pragma once
-#include "../engine/core/game_loop.h"
+#include <glfw_init.h>
 #include "../engine/core/display.h"
 class EditorController
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "../core/game_loop.h"
+#include <glfw_init.h>
 
 
 class Time

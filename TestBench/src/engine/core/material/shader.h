@@ -1,5 +1,5 @@
 #pragma once
-#include "../game_loop.h"
+#include <glfw_init.h>
 #include <string>
 #include <glm/mat4x2.hpp>
 

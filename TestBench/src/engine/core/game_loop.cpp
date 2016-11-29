@@ -1,9 +1,9 @@
-#include "game_loop.h"
 #include "../helper/input.h"
 #include "../helper/time.h"
 #include "../../test_scene/editor_controller.h"
 #include "../../test_scene/test_scene.h"
 #include "../helper/debug.h"
+#include "game_loop.h"
 
 std::vector<Object*> GameLoop::_updateObjects;
 std::vector<Object*> GameLoop::_drawObjects;

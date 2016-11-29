@@ -1,4 +1,4 @@
-#include "game_loop.h"
+#include <glfw_init.h>
 #include "display.h"
 #include <iostream>
 

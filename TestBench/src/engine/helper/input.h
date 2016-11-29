@@ -1,5 +1,5 @@
 #pragma once
-#include "../core/game_loop.h"
+#include <glfw_init.h>
 #include "../core/display.h"
 #include <glm/detail/type_vec2.hpp>
 #include <wink/slot.hpp>

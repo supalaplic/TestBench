@@ -1,6 +1,5 @@
 #pragma once
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <glfw_init.h>
 #include <vector>
 #include "object/object.h"
 

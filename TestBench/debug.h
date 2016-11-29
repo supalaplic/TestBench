@@ -17,6 +17,8 @@ public:
 
 	template<typename T>
 	static void Log(const T& log);
+	template<typename T>
+	static void LogWarning(const T& log);
 private:
 
 	//Debug has special Vertex struct as the user can define vertices position to draw lines
@@ -36,6 +38,12 @@ private:
 
 template <typename T>
 void Debug::Log(const T& log)
+{
+	std::cout << log << std::endl;
+}
+
+template <typename T>
+void Debug::LogWarning(const T& log)
 {
 	std::cout << log << std::endl;
 }

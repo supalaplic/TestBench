@@ -8,6 +8,8 @@ class Camera
 public:
 	Camera(float fov, float aspect, float zNear, float zFar);
 	glm::mat4 GetViewProjection();
+	glm::mat4 GetView() const;
+	glm::mat4 GetProjection();
 	Transform Transform;
 
 	void SetFov(float value) { _fov = value; _dirty = true; }

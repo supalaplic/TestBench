@@ -46,9 +46,6 @@
       <Filter>Scripts</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="object.cpp">
-      <Filter>Core\Object</Filter>
-    </ClCompile>
     <ClCompile Include="mesh.cpp">
       <Filter>Core\Object</Filter>
     </ClCompile>
@@ -70,7 +67,19 @@
     <ClCompile Include="cube.cpp">
       <Filter>Scripts\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="lamp.cpp" />
+    <ClCompile Include="lamp.cpp">
+      <Filter>Scripts\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="rendered_object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="game_loop.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="test_scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="display.h">
@@ -121,6 +130,15 @@
     <ClInclude Include="cube.h">
       <Filter>Scripts\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="lamp.h" />
+    <ClInclude Include="lamp.h">
+      <Filter>Scripts\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="rendered_object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="game_loop.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="test_scene.h" />
   </ItemGroup>
 </Project>

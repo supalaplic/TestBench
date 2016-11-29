@@ -17,6 +17,8 @@ private:
 	static const GLuint NUM_SHADERS = 2;
 	Shader(const Shader& other) {}
 	void operator=(const Shader& other) const {}
+	int GetUniforLocation(const std::string& name) const;
+
 
 	enum
 	{

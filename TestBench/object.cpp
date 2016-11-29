@@ -1,23 +1,52 @@
 #include "object.h"
+#include "game_loop.h"
 
-
-Object::Object(): _transform(Transform())
+Object::Object()
 {
-}
-
-Object::Object(Material* material, Mesh* mesh)
-{
-	Object::material = material;
-	Object::mesh = mesh;
+	AddToLoop(GameLoop::LoopType::Update);
 }
 
 Object::~Object()
 {
+	if (_inDrawLoop)
+		RemoveFromLoop(GameLoop::LoopType::Draw);
+
+	if(_inUpdateLoop)
+		RemoveFromLoop(GameLoop::LoopType::Update);
 }
 
-void Object::Draw(Camera* camera)
+void Object::AddToLoop(int loopType)
 {
-	material->Bind();
-	material->GetShader()->SetUniformMatrix4fv("Transform", GL_FALSE, camera->GetViewProjection() * _transform.GetModel());
-	mesh->Draw();
+	switch (loopType)
+	{
+	case GameLoop::Update: 
+		if(_inUpdateLoop) return;
+		_inUpdateLoop = true;
+		break;
+	case GameLoop::Draw: 
+		if (_inDrawLoop) return;
+		_inDrawLoop = true;
+		break;
+	default: throw std::logic_error("The given looptType was not Implemented: " + loopType);
+	}
+
+	GameLoop::AddToLoop(this, static_cast<GameLoop::LoopType>(loopType));
+}
+
+void Object::RemoveFromLoop(int loopType)
+{
+	switch (loopType)
+	{
+	case GameLoop::Update:
+		if (!_inUpdateLoop) return;
+		_inUpdateLoop = false;
+		break;
+	case GameLoop::Draw:
+		if (!_inDrawLoop) return;
+		_inDrawLoop = false;
+		break;
+	default: throw std::logic_error("The given looptType was not Implemented: " + loopType);
+	}
+
+	GameLoop::RemoveFromLoop(this, static_cast<GameLoop::LoopType>(loopType));
 }

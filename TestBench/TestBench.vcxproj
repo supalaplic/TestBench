@@ -149,15 +149,18 @@
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="cube.cpp" />
+    <ClCompile Include="test_scene.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="display.cpp" />
     <ClCompile Include="editor_controller.cpp" />
+    <ClCompile Include="game_loop.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="lamp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="material.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="rendered_object.cpp" />
     <ClCompile Include="resources.cpp" />
     <ClCompile Include="res_data.cpp" />
     <ClCompile Include="shader.cpp" />
@@ -168,14 +171,17 @@
   <ItemGroup>
     <ClInclude Include="camera.h" />
     <ClInclude Include="cube.h" />
+    <ClInclude Include="test_scene.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="display.h" />
     <ClInclude Include="editor_controller.h" />
+    <ClInclude Include="game_loop.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="lamp.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="object.h" />
+    <ClInclude Include="rendered_object.h" />
     <ClInclude Include="resources.h" />
     <ClInclude Include="res_data.h" />
     <ClInclude Include="shader.h" />

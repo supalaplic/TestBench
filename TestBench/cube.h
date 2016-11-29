@@ -1,7 +1,8 @@
 #pragma once
 #include "object.h"
+#include "rendered_object.h"
 
-class Cube:public Object
+class Cube:public RenderedObject
 {
 public:
 	int Index;

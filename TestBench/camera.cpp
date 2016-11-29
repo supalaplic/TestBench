@@ -18,8 +18,21 @@ glm::mat4 Camera::GetViewProjection()
 	if (_dirty)
 		Recalculate();
 
+	return _perspective * GetView();
+}
+
+glm::mat4 Camera::GetView() const
+{
 	auto pos = Transform.GetPos();
-	return _perspective * glm::lookAt(pos, pos + Transform.GetForward(), Transform.GetUp());
+	return glm::lookAt(pos, pos + Transform.GetForward(), Transform.GetUp());
+}
+
+glm::mat4 Camera::GetProjection()
+{
+	if (_dirty)
+		Recalculate();
+
+	return _perspective;
 }
 
 Camera* Camera::GetMainCamera()

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "debug.h"
 
 Shader::Shader(const std::string& filename)
 {
@@ -41,20 +42,38 @@ void Shader::Bind() const
 
 void Shader::SetUniformMatrix4fv(const std::string& name, GLboolean transpose, const glm::mat4& value) const
 {
-	auto location = glGetUniformLocation(GetProgram(), name.c_str());
+	auto location = GetUniforLocation(name.c_str());
+	if (location == -1)
+		return;
+
 	glUniformMatrix4fv(location, 1, transpose, glm::value_ptr(value));
 }
 
 void Shader::SetUniformMatrix3fv(const std::string& name, GLboolean transpose, const glm::mat3& value) const
 {
-	auto location = glGetUniformLocation(GetProgram(), name.c_str());
+	auto location = GetUniforLocation(name.c_str());
+	if (location == -1)
+		return;
+
 	glUniformMatrix3fv(location, 1, transpose, glm::value_ptr(value));
 }
 
 void Shader::SetUniform3f(const std::string& name, GLfloat x, GLfloat y, GLfloat z) const
 {
-	auto location = glGetUniformLocation(GetProgram(), name.c_str());
+	auto location = GetUniforLocation(name.c_str());
+	if (location == -1)
+		return;
+
 	glUniform3f(location, x, y, z);
+}
+
+int Shader::GetUniforLocation(const std::string& name) const
+{
+	auto location = glGetUniformLocation(GetProgram(), name.c_str());
+	if (location == -1)
+		Debug::LogWarning("The given uniform name '" + name + "' was not found!");
+
+	return location;
 }
 
 void CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage)

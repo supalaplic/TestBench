@@ -7,7 +7,8 @@ std::map < std::string, std::string > ResData::ShaderIds{
 
 std::map < std::string, std::string > ResData::ImageIds{
 	{ "awesome_img", "./res/awesomeface.png" },
-	{ "container_img", "./res/container.jpg" }
+	{ "container_img", "./res/container.jpg" },
+	{ "container2_img", "./res/container2.png"},
 };
 
 //replace second string with preferences

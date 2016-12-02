@@ -13,6 +13,7 @@ public:
 	void SetUniformMatrix4fv(const std::string& name, GLboolean transpose, const glm::mat4& value) const;
 	void SetUniformMatrix3fv(const std::string& name, GLboolean transpose, const glm::mat3& value) const;
 	void SetUniform3f(const std::string& name, GLfloat x, GLfloat y, GLfloat z) const;
+	void SetUniform1f(const std::string& name, GLfloat value) const;
 private:
 	static const GLuint NUM_SHADERS = 2;
 	Shader(const Shader& other) {}

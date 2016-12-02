@@ -74,8 +74,7 @@ TestScene::TestScene()
 
 	auto mesh = Resources::AddMesh("basic_mesh", vertices, indices);
 	auto material = Resources::AddMaterial("basic_mat", "basic_shader", "cube_tex");
-	material->GetTexture()->AddImage("awesome_img");
-	material->GetTexture()->AddImage("container_img");
+	material->GetTexture()->AddImage("container2_img");
 
 	glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 

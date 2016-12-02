@@ -67,6 +67,15 @@ void Shader::SetUniform3f(const std::string& name, GLfloat x, GLfloat y, GLfloat
 	glUniform3f(location, x, y, z);
 }
 
+void Shader::SetUniform1f(const std::string & name, GLfloat value) const
+{
+	auto location = GetUniforLocation(name.c_str());
+	if (location == -1)
+		return;
+
+	glUniform1f(location, value);
+}
+
 int Shader::GetUniforLocation(const std::string& name) const
 {
 	auto location = glGetUniformLocation(GetProgram(), name.c_str());

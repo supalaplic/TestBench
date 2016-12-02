@@ -61,9 +61,6 @@
     <ClCompile Include="src\engine\helper\input.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\helper\res_data.cpp">
-      <Filter>Helper</Filter>
-    </ClCompile>
     <ClCompile Include="src\engine\helper\debug.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
@@ -80,6 +77,9 @@
       <Filter>Scripts</Filter>
     </ClCompile>
     <ClCompile Include="src\test_scene\test_scene.cpp" />
+    <ClCompile Include="src\engine\helper\res_data.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\engine\core\object\mesh.h">
@@ -121,9 +121,6 @@
     <ClInclude Include="src\engine\helper\input.h">
       <Filter>Helper</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\helper\res_data.h">
-      <Filter>Helper</Filter>
-    </ClInclude>
     <ClInclude Include="src\engine\helper\debug.h">
       <Filter>Helper</Filter>
     </ClInclude>
@@ -140,5 +137,8 @@
       <Filter>Scripts</Filter>
     </ClInclude>
     <ClInclude Include="src\test_scene\test_scene.h" />
+    <ClInclude Include="src\engine\helper\res_data.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

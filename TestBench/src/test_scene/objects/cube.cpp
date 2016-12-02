@@ -23,9 +23,15 @@ void Cube::Update()
 void Cube::Draw(Camera* camera)
 {
 	material->Bind();
-	material->GetShader()->SetUniform3f("ObjectColor", 1.0f, 0.5f, 0.31f);
-	material->GetShader()->SetUniform3f("LightColor", 1.0f, 1.0f, 1.0f);
 	material->GetShader()->SetUniform3f("LightPos", LightPosition.x, LightPosition.y, LightPosition.z);
+
+	material->GetShader()->SetUniform3f("material.specular", 0.5f, 0.5f, 0.5f);
+	material->GetShader()->SetUniform1f("material.shininess", 32.0f);
+
+	material->GetShader()->SetUniform3f("light.ambient", 0.2f, 0.2f, 0.2f);
+	material->GetShader()->SetUniform3f("light.diffuse", 0.5f, 0.5f, 0.5f);
+	material->GetShader()->SetUniform3f("light.specular", 1.0f, 1.0f, 1.0f);
+
 
 	auto model = GatTransform()->GetModel();
 	auto view = camera->GetView();

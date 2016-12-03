@@ -26,9 +26,17 @@ void Cube::Draw(Camera* camera)
 	material->GetShader()->SetUniform3f("LightPos", LightPosition.x, LightPosition.y, LightPosition.z);
 	material->GetShader()->SetUniform1f("material.shininess", 32.0f);
 
+
+
 	material->GetShader()->SetUniform3f("light.ambient", 0.2f, 0.2f, 0.2f);
 	material->GetShader()->SetUniform3f("light.diffuse", 0.5f, 0.5f, 0.5f);
 	material->GetShader()->SetUniform3f("light.specular", 1.0f, 1.0f, 1.0f);
+
+	material->GetShader()->SetUniform1f("light.constant", 1.0f);
+	material->GetShader()->SetUniform1f("light.linear", 0.09f);
+	material->GetShader()->SetUniform1f("light.quadratic", 0.032f);
+	material->GetShader()->SetUniform1f("light.cutOff", glm::cos(glm::radians(20.5f)));
+	material->GetShader()->SetUniform1f("light.outerCutOff", glm::cos(glm::radians(25.5f)));
 
 
 	auto model = GatTransform()->GetModel();
@@ -39,5 +47,10 @@ void Cube::Draw(Camera* camera)
 	material->GetShader()->SetUniformMatrix4fv("ViewModel", GL_FALSE, viewModel);
 	material->GetShader()->SetUniformMatrix4fv("View", GL_FALSE, view);
 	material->GetShader()->SetUniformMatrix3fv("Normal", GL_TRUE, glm::inverse(viewModel));
+
+	
+	auto dir = glm::transpose(glm::inverse(view)) * glm::vec4(-0.1f, 0.0f, -1.0f, 1.0f);
+	material->GetShader()->SetUniform3f("light.direction", dir.x, dir.y, dir.z);
+
 	mesh->Draw();
 }

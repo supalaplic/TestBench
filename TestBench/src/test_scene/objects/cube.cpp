@@ -24,8 +24,6 @@ void Cube::Draw(Camera* camera)
 {
 	material->Bind();
 	material->GetShader()->SetUniform3f("LightPos", LightPosition.x, LightPosition.y, LightPosition.z);
-
-	material->GetShader()->SetUniform3f("material.specular", 0.5f, 0.5f, 0.5f);
 	material->GetShader()->SetUniform1f("material.shininess", 32.0f);
 
 	material->GetShader()->SetUniform3f("light.ambient", 0.2f, 0.2f, 0.2f);

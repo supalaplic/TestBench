@@ -18,14 +18,13 @@ void Texture::AddImage(const std::string& imageId, bool hasAlpha, const std::str
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	int width, height, n;
 	auto image = stbi_load(ResData::ImageIds[imageId].c_str(), &width, &height, &n, hasAlpha ? STBI_rgb_alpha : STBI_rgb);
 	
-	auto faild = stbi_failure_reason();
-	if (faild) std::cerr << ("Loading image '" + ResData::ImageIds[imageId] + "' faild: " +  faild);
+	if (!image) std::cerr << ("Loading image '" + ResData::ImageIds[imageId] + "' faild: " + stbi_failure_reason());
 
 	glTexImage2D(GL_TEXTURE_2D, 0, hasAlpha ? GL_RGBA : GL_RGBA, width, height, 0, hasAlpha ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, image);
 	glGenerateMipmap(GL_TEXTURE_2D);

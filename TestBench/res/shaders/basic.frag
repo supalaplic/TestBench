@@ -7,11 +7,15 @@ in vec2 texCoords;
 in vec3 lightPos;
 
 uniform vec3 LightColor;
+//diffuse
 uniform sampler2D Texture0;
+//specular
+uniform sampler2D Texture1;
+//emission
+uniform sampler2D Texture2;
 
 struct Material
 {
-  vec3 specular;
   float shininess;
 };
 uniform Material material;
@@ -43,7 +47,9 @@ void main()
   vec3 viewDir = normalize(-fragPos);
   vec3 reflectDir = reflect(-lightDir, norm);
   float spec = pow(max(dot(viewDir, reflectDir), 0.0f), material.shininess);
-  vec3 specular = spec * material.specular * light.specular;
+  vec3 specular = spec * vec3(texture(Texture1, texCoords)) * light.specular;
 
+  //Emission
+  //vec3 emission = vec3(texture(Texture2, texCoords));
   color = vec4((ambient + diffuse + specular), 1.0f);
 }

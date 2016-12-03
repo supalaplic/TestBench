@@ -1,0 +1,6 @@
+# add error for "texture image file not found"
+
+res_data:
+# fix file paths and location
+# add more options to (refactor the idea)
+# add retrieve function so undefined ids should throw errors

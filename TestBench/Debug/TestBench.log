@@ -1,2 +1,5 @@
-﻿  texture.cpp
+﻿  test_scene.cpp
+  cube.cpp
+e:\programming\opengl\testbench\testbench\src\engine\helper\time.h(15): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+  Generating Code...
   TestBench.vcxproj -> E:\programming\opengl\TestBench\Debug\TestBench.exe

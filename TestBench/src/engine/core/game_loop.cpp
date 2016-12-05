@@ -67,7 +67,8 @@ void GameLoop::RemoveFromLoop(Object* obj, LoopType loopType)
 
 //removing an object from a loop stets it's pointer to nullptr, 
 //in order to avoide iterator invalidation if remove is called in the middle of the loop
-void GameLoop::RemoveObject(std::vector<Object*>& vec, Object* obj)
+template<typename T>
+void GameLoop::RemoveObject(std::vector<T*>& vec, T* obj)
 {
 	auto it = std::find(vec.begin(), vec.end(), obj);
 	if (it != vec.end())

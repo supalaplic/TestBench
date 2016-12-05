@@ -15,7 +15,7 @@ Camera::Camera(float fov, float aspect, float zNear, float zFar)
 
 glm::mat4 Camera::GetViewProjection()
 {
-	if (_dirty)
+	if (_dirtyPersp)
 		Recalculate();
 
 	return _perspective * GetView();
@@ -29,7 +29,7 @@ glm::mat4 Camera::GetView() const
 
 glm::mat4 Camera::GetProjection()
 {
-	if (_dirty)
+	if (_dirtyPersp)
 		Recalculate();
 
 	return _perspective;

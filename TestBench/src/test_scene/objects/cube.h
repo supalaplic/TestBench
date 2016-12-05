@@ -5,7 +5,6 @@ class Cube:public RenderedObject
 {
 public:
 	int Index;
-	glm::vec3 LightPosition;
 
 public:
 	Cube();

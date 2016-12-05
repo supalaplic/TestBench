@@ -3,6 +3,8 @@
 #include "../engine/core/resources.h"
 #include "objects/cube.h"
 #include "objects/lamp.h"
+#include "../engine/shading/light/directional_light.h"
+#include "../../point_light.h"
 
 TestScene::TestScene()
 {
@@ -78,7 +80,6 @@ TestScene::TestScene()
 	material->GetTexture()->AddImage("container2_specular_img");
 	//material->GetTexture()->AddImage("matrix_img");
 
-	glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 	
 	for (int i = 0; i < 10; i++)
@@ -87,15 +88,52 @@ TestScene::TestScene()
 		obj->GatTransform()->SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
 		obj->GatTransform()->SetPos(cubePositions[i]);
 		obj->Index = i;
-		obj->LightPosition = lightPos;
 
 		_objects.push_back(std::move(obj));
 	}
 
-	auto lamp = std::make_unique<Lamp>(Resources::AddMaterial("lamp_mat", "lamp_shader", ""), mesh);
-	lamp->GatTransform()->SetPos(lightPos);
-	lamp->GatTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
-	_objects.push_back(std::move(lamp));
+
+	//lights
+
+	auto dirLight = std::make_unique<DirectionalLight>();
+	dirLight->Ambient = glm::vec3(0.05f, 0.05f, 0.05f);
+	dirLight->Diffuse = glm::vec3(0.4f, 0.4f, 0.4f);
+	dirLight->Specular = glm::vec3(0.5f, 0.5f, 0.5f);
+	_lights.push_back(std::move(dirLight));
+
+	glm::vec3 pointLightPositions[] = {
+		glm::vec3(0.7f,  0.2f,  2.0f),
+		glm::vec3(2.3f, -3.3f, -4.0f),
+		glm::vec3(-4.0f,  2.0f, -12.0f),
+		glm::vec3(0.0f,  0.0f, -3.0f)
+	};
+
+	glm::vec3 pointLightColors[] = {
+		glm::vec3(1.0f, 0.6f, 0.0f),
+		glm::vec3(1.0f, 0.0f, 0.0f),
+		glm::vec3(1.0f, 1.0, 0.0),
+		glm::vec3(0.2f, 0.2f, 1.0f)
+	};
+
+	auto lampMat = Resources::AddMaterial("lamp_mat", "lamp_shader", "");
+	for (int i = 0; i < 4; i++)
+	{
+		auto pointLight = std::make_unique<PointLight>();
+		pointLight->GetTransform()->SetPos(pointLightPositions[i]);
+		pointLight->Ambient = pointLightColors[i] * 0.1f;
+		pointLight->Diffuse = pointLightColors[i];
+		pointLight->Specular = glm::vec3(1.0f, 1.0f, 1.0f);
+
+		pointLight->Linear = 0.22f;
+		pointLight->Quadratic = 0.20f;
+		_lights.push_back(std::move(pointLight));
+
+		auto lamp = std::make_unique<Lamp>(lampMat, mesh);
+		lamp->GatTransform()->SetPos(pointLightPositions[i]);
+		lamp->GatTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
+		lamp->Color = pointLightColors[i];
+		_objects.push_back(std::move(lamp));
+	}
 }
 
 

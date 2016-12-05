@@ -2,6 +2,7 @@
 #include <glfw_init.h>
 #include <vector>
 #include "object/object.h"
+#include "../shading/light/light.h"
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -35,7 +36,9 @@ private:
 	GameLoop(const GameLoop&) {};
 	void operator=(const GameLoop&) { };
 
-	static void RemoveObject(std::vector<Object*>& vec, Object* obj);
+	template<typename T>
+	static void RemoveObject(std::vector<T*>& vec, T* obj);
+
 	void CallLoop(LoopType) const;
 };
 

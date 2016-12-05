@@ -19,3 +19,16 @@ void RenderedObject::Draw(Camera* camera)
 	material->GetShader()->SetUniformMatrix4fv("Transform", GL_FALSE, camera->GetViewProjection() * _transform.GetModel());
 	mesh->Draw();
 }
+
+void RenderedObject::ApplyLighting(LightingManager::Mode mode)
+{
+	switch (mode)
+	{
+	case LightingManager::OneFull:
+		LightingManager::ApplyOneFull(material->GetShader());
+		break;
+	case LightingManager::OneCapped: break;
+	default: break;
+	}
+}
+

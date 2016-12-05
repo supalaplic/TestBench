@@ -11,7 +11,7 @@ public:
 	glm::mat4 GetProjection();
 	Transform Transform;
 
-	void SetFov(float value) { _fov = value; _dirty = true; }
+	void SetFov(float value) { _fov = value; _dirtyPersp = true; }
 	float GetFov() const { return _fov; }
 
 	//main camera should be the first camera object from the hierarchy
@@ -23,7 +23,7 @@ private:
 	float _fov, _aspect, _zNear, _zFar;
 	
 	//when this is true, perspective is recalculated
-	bool _dirty;
+	bool _dirtyPersp = true;
 
 	//recalculate perspective
 	void Recalculate();

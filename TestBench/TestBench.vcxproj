@@ -147,6 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="point_light.cpp" />
+    <ClCompile Include="src\engine\shading\light\directional_light.cpp" />
+    <ClCompile Include="src\engine\shading\light\lighting_manager.cpp" />
+    <ClCompile Include="src\engine\shading\light\light.cpp" />
     <ClCompile Include="src\engine\helper\camera.cpp" />
     <ClCompile Include="src\test_scene\objects\cube.cpp" />
     <ClCompile Include="src\test_scene\test_scene.cpp" />
@@ -169,6 +173,10 @@
     <ClCompile Include="src\engine\helper\time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="point_light.h" />
+    <ClInclude Include="src\engine\shading\light\directional_light.h" />
+    <ClInclude Include="src\engine\shading\light\lighting_manager.h" />
+    <ClInclude Include="src\engine\shading\light\light.h" />
     <ClInclude Include="src\engine\helper\camera.h" />
     <ClInclude Include="src\test_scene\objects\cube.h" />
     <ClInclude Include="src\test_scene\test_scene.h" />

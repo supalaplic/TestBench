@@ -21,6 +21,7 @@ Shader* Resources::GetShader(const std::string& id)
 	if (!_shaders[id])
 	{
 		if (ResData::ShaderIds.find(id) == ResData::ShaderIds.end())
+			throw std::out_of_range("No shader with id:'" + id + "' was defined! Used AddTexture to define textures.");
 
 		_shaders[id] = std::make_unique<Shader>(ResData::ShaderIds[id]);
 	}
@@ -28,14 +29,26 @@ Shader* Resources::GetShader(const std::string& id)
 	return _shaders[id].get();
 }
 
+Texture* Resources::AddTexture(const std::string& textureId, const std::string& imageId, bool hasAlpha, const std::string& uniformId)
+{
+	if (!_textures[textureId])
+		_textures[textureId] = std::make_unique<Texture>(textureId, imageId, hasAlpha, uniformId);
+
+	return _textures[textureId].get();
+}
+
 Texture* Resources::GetTexture(const std::string& id)
 {
 	if (!_textures[id])
+		throw std::out_of_range("No texture with id:'" + id + "' was defined!");
 
 	return _textures[id].get();
 }
 
+Material* Resources::AddMaterial(const std::string& materialId, const std::string& shaderId)
 {
+	if (!_materials[materialId])
+		_materials[materialId] = std::make_unique<Material>(materialId, shaderId);
 	return _materials[materialId].get();
 }
 
@@ -43,6 +56,7 @@ Texture* Resources::GetTexture(const std::string& id)
 Material* Resources::GetMaterial(const std::string& id)
 {
 	if (!_materials[id])
+		return AddMaterial(id, "");
 
 	return _materials[id].get();
 }

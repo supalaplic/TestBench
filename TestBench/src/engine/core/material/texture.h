@@ -6,18 +6,17 @@
 class Texture
 {
 private:
-	std::string _id;
-	std::vector<GLuint> _images;
-	std::vector<std::string> _uniformIds;
+	std::string _textureId;
+	GLuint _image;
+	std::string _uniformId;
 
 
 public:
-	Texture(const std::string& id);
+	//uniformId is used to identify the sampler form the used shader
+	//if no uniformId is provided Texture + (index in material) will be used
+	Texture(const std::string& textureId, const std::string& imageId, bool hasAlpha = false, const std::string& uniformId = "");
 	virtual ~Texture() {}
-	void Bind(const Shader* shader) const;
-	//uniform id is the if of the imdeId texture in the shaders
-	//if no uniformId is given, Texture + image_index will be used
-	void AddImage(const std::string& imagerId, bool hasAlpha = false, const std::string& uniformId = "");
+	void Bind(const Shader* shader, int index = 0) const;
 private:
 	Texture(const Texture&) {}
 	void operator=(const Texture*) const{}

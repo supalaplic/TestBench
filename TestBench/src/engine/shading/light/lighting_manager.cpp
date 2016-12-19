@@ -1,5 +1,4 @@
 #include "lighting_manager.h"
-#include "../../../../point_light.h"
 
 std::vector<Light*> LightingManager::_dirLights;
 std::vector<Light*> LightingManager::_pointLights;

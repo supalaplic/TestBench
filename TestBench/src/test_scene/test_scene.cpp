@@ -4,7 +4,7 @@
 #include "objects/cube.h"
 #include "objects/lamp.h"
 #include "../engine/shading/light/directional_light.h"
-#include "../../point_light.h"
+#include "../engine/shading/light/point_light.h"
 
 TestScene::TestScene()
 {
@@ -75,11 +75,13 @@ TestScene::TestScene()
 	}
 
 	auto mesh = Resources::AddMesh("basic_mesh", vertices, indices);
-	auto material = Resources::AddMaterial("basic_mat", "basic_shader", "cube_tex");
-	material->GetTexture()->AddImage("container2_img");
-	material->GetTexture()->AddImage("container2_specular_img");
-	//material->GetTexture()->AddImage("matrix_img");
+	auto material = Resources::AddMaterial("basic_mat", "basic_shader");
 
+
+	auto tex1 = Resources::AddTexture("box_cont_1", "container2_img");
+	auto tex2 = Resources::AddTexture("box_cont_2", "container2_specular_img");
+	material->AddTexture(tex1);
+	material->AddTexture(tex2);
 
 	
 	for (int i = 0; i < 10; i++)
@@ -115,7 +117,7 @@ TestScene::TestScene()
 		glm::vec3(0.2f, 0.2f, 1.0f)
 	};
 
-	auto lampMat = Resources::AddMaterial("lamp_mat", "lamp_shader", "");
+	auto lampMat = Resources::AddMaterial("lamp_mat", "lamp_shader");
 	for (int i = 0; i < 4; i++)
 	{
 		auto pointLight = std::make_unique<PointLight>();

@@ -14,6 +14,12 @@ struct Vertex
 
 class Mesh
 {
+private:
+	std::vector<Vertex> vertices;
+	std::vector<GLuint> indices;
+	GLuint VAO, VBO, EBO;
+
+
 public:
 	Mesh(const std::vector<Vertex>& vertices, const std::vector<GLuint>& indices);
 	void Draw() const;
@@ -22,9 +28,5 @@ private:
 	Mesh(const Mesh& other) {}
 	void operator=(const Mesh& other) {}
 	void SetupMesh();
-
-	std::vector<Vertex> vertices;
-	std::vector<GLuint> indices;
-	GLuint VAO, VBO, EBO;
 };
 

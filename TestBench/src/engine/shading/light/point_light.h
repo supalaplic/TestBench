@@ -1,5 +1,5 @@
 #pragma once
-#include "src/engine/shading/light/light.h"
+#include "light.h"
 
 #define DEFAULT_POINT_LIGHT_ID "pointLight"
 class PointLight:public Light

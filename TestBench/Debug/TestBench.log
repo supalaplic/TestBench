@@ -1,21 +1,4 @@
-﻿  camera.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  time.cpp
-  input.cpp
-  mesh.cpp
-  shader.cpp
-  material.cpp
-  display.cpp
-  test_scene.cpp
-  lamp.cpp
-  cube.cpp
-  editor_controller.cpp
-  main.cpp
-  directional_light.cpp
-  debug.cpp
-  rendered_object.cpp
-  object.cpp
-  game_loop.cpp
-  point_light.cpp
-  TestBench.vcxproj -> E:\programming\opengl\TestBench\Debug\TestBench.exe
+﻿  cube.cpp
+e:\opengl\testbench\testbench\src\engine\helper\time.h(15): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+  TestBench.vcxproj -> E:\opengl\TestBench\Debug\TestBench.exe
+  TestBench.vcxproj -> E:\opengl\TestBench\Debug\TestBench.pdb (Full PDB)

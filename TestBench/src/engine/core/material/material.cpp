@@ -1,19 +1,20 @@
 #include <iostream>
 #include "../resources.h"
 
-Material::Material(const std::string& id, const std::string& shaderId, const std::string& textureId)
+Material::Material(const std::string& materialId, const std::string& shader)
 {
-	_id = id;
+	_materialId = materialId;
+	_shader = Resources::GetShader(shader);
+}
 
-	//implement default shader
-	if (shaderId != "")
-		_shader = Resources::GetShader(shaderId);
-	else
-		std::cerr << "Implement default shader" << std::endl;
-	
-	_texture = nullptr;
-	if (!textureId.empty())
-		_texture = Resources::GetTexture(textureId);
+void Material::AddTexture(const std::string& textureId)
+{
+	_textures.push_back(Resources::GetTexture(textureId));
+}
+
+void Material::AddTexture(Texture* textureId)
+{
+	_textures.push_back(textureId);
 }
 
 //remove this when batching is implemented
@@ -21,8 +22,10 @@ void Material::Bind()
 {
 	_shader->Bind();
 
-	if (_texture != nullptr)
-		_texture->Bind(_shader);
+	for (size_t i = 0; i < _textures.size(); i++)
+	{
+		_textures[i]->Bind(_shader, i);
+	}
 }
 
 

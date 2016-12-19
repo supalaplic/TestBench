@@ -1,6 +1,6 @@
 #include "point_light.h"
-#include "src/engine/shading/light/lighting_manager.h"
-#include "src/engine/helper/camera.h"
+#include "lighting_manager.h"
+#include "../../helper/camera.h"
 
 
 PointLight::PointLight()

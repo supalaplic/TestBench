@@ -20,13 +20,14 @@ public:
 	Resources();
 	~Resources();
 
-	//getters initializes and adds data to memory if the given id is not existent
+	//gets and may also instantiate, if the requested shader is not initialized
 	static Shader* GetShader(const std::string& id);
 
-	//if a new Texture needs to be initialized, hasAlpha will be used to know if Alpha is needed
+	static Texture* AddTexture(const std::string& textureId, const std::string& imageId, bool hasAlpha = false, const std::string& uniformId = "");
+	//throws exception when the given texture is not defined
 	static Texture* GetTexture(const std::string& id);
 
-	static Material* AddMaterial(const std::string& materialId, const std::string& shaderId, const std::string& textureId);
+	static Material* AddMaterial(const std::string& materialId, const std::string& shaderId);
 	//if the given material id is not found a new material will be created
 	static Material* GetMaterial(const std::string& id);
 

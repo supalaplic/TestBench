@@ -84,6 +84,7 @@
     <ClCompile Include="src\engine\shading\light\directional_light.cpp" />
     <ClCompile Include="src\engine\shading\light\lighting_manager.cpp" />
     <ClCompile Include="src\engine\shading\light\point_light.cpp" />
+    <ClCompile Include="src\engine\helper\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\engine\core\object\mesh.h">
@@ -148,5 +149,6 @@
     <ClInclude Include="src\engine\shading\light\directional_light.h" />
     <ClInclude Include="src\engine\shading\light\lighting_manager.h" />
     <ClInclude Include="src\engine\shading\light\point_light.h" />
+    <ClInclude Include="src\engine\helper\utils.h" />
   </ItemGroup>
 </Project>

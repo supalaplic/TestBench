@@ -171,6 +171,7 @@
     <ClCompile Include="src\engine\tools\stb_image.cpp" />
     <ClCompile Include="src\engine\core\material\texture.cpp" />
     <ClCompile Include="src\engine\helper\time.cpp" />
+    <ClCompile Include="src\engine\helper\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\engine\shading\light\point_light.h" />
@@ -197,6 +198,7 @@
     <ClInclude Include="src\engine\core\material\texture.h" />
     <ClInclude Include="src\engine\helper\time.h" />
     <ClInclude Include="src\engine\core\object\transform.h" />
+    <ClInclude Include="src\engine\helper\utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

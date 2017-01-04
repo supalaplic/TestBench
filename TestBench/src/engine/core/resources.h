@@ -6,8 +6,17 @@
 #include "material/material.h"
 #include "object/mesh.h"
 
+#define RESOURCE_TYPE_KEY "type"
+#define RESOURCE_ID_KEY "id"
+#define RESOURCE_PATH_KEY "path"
+#define RESOURCE_ALPHA_KEY "hasAlpha"
+
+#define RESOURCE_TYPE_IMAGE "image"
+
+
 class Resources
 {
+
 public:
 private:
 	static std::map<std::string, std::unique_ptr<Shader>> _shaders;
@@ -23,9 +32,7 @@ public:
 	//gets and may also instantiate, if the requested shader is not initialized
 	static Shader* GetShader(const std::string& id);
 
-	static Texture* AddTexture(const std::string& textureId, const std::string& imageId, bool hasAlpha = false, const std::string& uniformId = "");
-	//throws exception when the given texture is not defined
-	static Texture* GetTexture(const std::string& id);
+	static Texture* GetTexture(const std::string& filePath);
 
 	static Material* AddMaterial(const std::string& materialId, const std::string& shaderId);
 	//if the given material id is not found a new material will be created
@@ -37,7 +44,7 @@ public:
 	static Mesh* GetMesh(const std::string& id);
 
 private:
-	Resources(const Resources&) { };
-	void operator=(const Resources&) {};
+	Resources(const Resources&) {}
+	void operator=(const Resources&) {}
 };
 

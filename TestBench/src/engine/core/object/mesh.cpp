@@ -4,8 +4,8 @@
 
 Mesh::Mesh(const std::vector<Vertex>& vertices, const std::vector<GLuint>& indices)
 {
-	this->vertices = vertices;
-	this->indices = indices;
+	this->_vertices = vertices;
+	this->_indices = indices;
 
 	SetupMesh();
 }
@@ -27,10 +27,10 @@ void Mesh::SetupMesh()
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
 
-	glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), &vertices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, _vertices.size() * sizeof(Vertex), &_vertices[0], GL_STATIC_DRAW);
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), &indices[0], GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, _indices.size() * sizeof(GLuint), &_indices[0], GL_STATIC_DRAW);
 
 
 	glEnableVertexAttribArray(0);
@@ -51,7 +51,7 @@ void Mesh::Draw() const
 {
 	glBindVertexArray(VAO);
 
-	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, _indices.size(), GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);
 }

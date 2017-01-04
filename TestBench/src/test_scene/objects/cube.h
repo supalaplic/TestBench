@@ -8,10 +8,9 @@ public:
 
 public:
 	Cube();
-	Cube(Material* material, Mesh* mesh);
-
 	virtual ~Cube();
 
+	void AddMesh(Material* material, Mesh* mesh) override;
 	void Update() override;
 	void Draw(Camera* camera) override;
 };

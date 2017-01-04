@@ -6,16 +6,16 @@
 
 class RenderedObject :public Object
 {
-public:
-	Mesh* mesh;
-	Material* material;
+protected:
+	std::vector<Mesh*> _meshes;
+	std::vector<Material*> _materials;
 
 public:
 	//automatically adds to Draw loop
 	RenderedObject();
-	RenderedObject(Material* material, Mesh* mesh);
 	virtual ~RenderedObject() {}
 
+	virtual void AddMesh(Material* material, Mesh* mesh);
 	void Draw(Camera* camera) override;
 	void ApplyLighting(LightingManager::Mode mode = LightingManager::Mode::OneFull);
 };

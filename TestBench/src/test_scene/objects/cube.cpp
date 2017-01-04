@@ -6,13 +6,13 @@ Cube::Cube()
 {
 }
 
-Cube::Cube(Material* material, Mesh* mesh) : RenderedObject(material, mesh)
-{
-
-}
-
 Cube::~Cube()
 {
+}
+
+void Cube::AddMesh(Material* material, Mesh* mesh)
+{
+	RenderedObject::AddMesh(material, mesh);
 }
 
 void Cube::Update()
@@ -22,20 +22,24 @@ void Cube::Update()
 
 void Cube::Draw(Camera* camera)
 {
-	material->Bind();
-	material->GetShader()->SetUniform1f("material.shininess", 32.0f);
+	for (auto* mesh : _meshes)
+	{
+		auto material = _materials[mesh->GetMaterialIndex()];
+		material->Bind();
+		material->GetShader()->SetUniform1f("material.shininess", 32.0f);
 
-	ApplyLighting();
+		ApplyLighting();
 
 
-	auto model = GatTransform()->GetModel();
-	auto view = camera->GetView();
-	auto projection = camera->GetProjection();
-	auto viewModel = view * model;
-	material->GetShader()->SetUniformMatrix4fv("Transform", GL_FALSE, projection * viewModel);
-	material->GetShader()->SetUniformMatrix4fv("ViewModel", GL_FALSE, viewModel);
-	//material->GetShader()->SetUniformMatrix4fv("View", GL_FALSE, view);
-	material->GetShader()->SetUniformMatrix3fv("Normal", GL_TRUE, glm::inverse(viewModel));
+		auto model = GatTransform()->GetModel();
+		auto view = camera->GetView();
+		auto projection = camera->GetProjection();
+		auto viewModel = view * model;
+		material->GetShader()->SetUniformMatrix4fv("Transform", GL_FALSE, projection * viewModel);
+		material->GetShader()->SetUniformMatrix4fv("ViewModel", GL_FALSE, viewModel);
+		//material->GetShader()->SetUniformMatrix4fv("View", GL_FALSE, view);
+		material->GetShader()->SetUniformMatrix3fv("Normal", GL_TRUE, glm::inverse(viewModel));
 
-	mesh->Draw();
+		mesh->Draw();
+	}
 }

@@ -78,15 +78,16 @@ TestScene::TestScene()
 	auto material = Resources::AddMaterial("basic_mat", "basic_shader");
 
 
-	auto tex1 = Resources::AddTexture("box_cont_1", "container2_img");
-	auto tex2 = Resources::AddTexture("box_cont_2", "container2_specular_img");
+	auto tex1 = Resources::GetTexture("./res/container2.png");
+	auto tex2 = Resources::GetTexture("./res/container2_specular.png");
 	material->AddTexture(tex1);
 	material->AddTexture(tex2);
 
 	
 	for (int i = 0; i < 10; i++)
 	{
-		auto obj = std::make_unique<Cube>(material, mesh);
+		auto obj = std::make_unique<Cube>();
+		obj->AddMesh(material, mesh);
 		obj->GatTransform()->SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
 		obj->GatTransform()->SetPos(cubePositions[i]);
 		obj->Index = i;
@@ -130,7 +131,8 @@ TestScene::TestScene()
 		pointLight->Quadratic = 0.20f;
 		_lights.push_back(std::move(pointLight));
 
-		auto lamp = std::make_unique<Lamp>(lampMat, mesh);
+		auto lamp = std::make_unique<Lamp>();
+		lamp->AddMesh(lampMat, mesh);
 		lamp->GatTransform()->SetPos(pointLightPositions[i]);
 		lamp->GatTransform()->SetScale(glm::vec3(0.25f, 0.25f, 0.25f));
 		lamp->Color = pointLightColors[i];

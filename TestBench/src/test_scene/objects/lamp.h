@@ -7,9 +7,9 @@ public:
 	glm::vec3 Color;
 
 	Lamp() {}
-	Lamp(Material* material, Mesh* mesh);
 	virtual ~Lamp() {}
 
+	void AddMesh(Material* material, Mesh* mesh) override;
 	void Draw(Camera* camera) override;
 };
 

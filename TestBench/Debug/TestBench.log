@@ -1,4 +1,18 @@
-﻿  cube.cpp
+﻿  test_scene.cpp
+  lamp.cpp
+  cube.cpp
 e:\opengl\testbench\testbench\src\engine\helper\time.h(15): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
+  utils.cpp
+  rendered_object.cpp
+  mesh.cpp
+  Generating Code...
+  Compiling...
+  debug.cpp
+  resources.cpp
+  texture.cpp
+  material.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  directional_light.cpp
   TestBench.vcxproj -> E:\opengl\TestBench\Debug\TestBench.exe
   TestBench.vcxproj -> E:\opengl\TestBench\Debug\TestBench.pdb (Full PDB)

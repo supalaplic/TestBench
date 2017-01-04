@@ -29,20 +29,12 @@ Shader* Resources::GetShader(const std::string& id)
 	return _shaders[id].get();
 }
 
-Texture* Resources::AddTexture(const std::string& textureId, const std::string& imageId, bool hasAlpha, const std::string& uniformId)
+Texture* Resources::GetTexture(const std::string& imagePath)
 {
-	if (!_textures[textureId])
-		_textures[textureId] = std::make_unique<Texture>(textureId, imageId, hasAlpha, uniformId);
+	if (!_textures[imagePath])
+		_textures[imagePath] = std::make_unique<Texture>(imagePath);
 
-	return _textures[textureId].get();
-}
-
-Texture* Resources::GetTexture(const std::string& id)
-{
-	if (!_textures[id])
-		throw std::out_of_range("No texture with id:'" + id + "' was defined!");
-
-	return _textures[id].get();
+	return _textures[imagePath].get();
 }
 
 Material* Resources::AddMaterial(const std::string& materialId, const std::string& shaderId)

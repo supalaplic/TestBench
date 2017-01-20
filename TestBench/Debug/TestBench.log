@@ -1,18 +1,5 @@
-﻿  test_scene.cpp
-  lamp.cpp
-  cube.cpp
-e:\opengl\testbench\testbench\src\engine\helper\time.h(15): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
-  utils.cpp
-  rendered_object.cpp
-  mesh.cpp
-  Generating Code...
-  Compiling...
-  debug.cpp
-  resources.cpp
-  texture.cpp
-  material.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  directional_light.cpp
+﻿LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'E:\opengl\TestBench\Debug\vc120.pdb'; linking object as if no debug info
   TestBench.vcxproj -> E:\opengl\TestBench\Debug\TestBench.exe
   TestBench.vcxproj -> E:\opengl\TestBench\Debug\TestBench.pdb (Full PDB)
